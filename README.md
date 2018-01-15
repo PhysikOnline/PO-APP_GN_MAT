@@ -21,7 +21,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Icons `npm install material-design-icons`
 
 ### Stylings
-If parameter `--style=scss` wasn't set at beginning, you can convert your project from `css` to `scss` using `ng set defaults.styleExt scss`
+
+
+If parameter `--style=scss` wasn't set at beginning, you can convert your project from `css` to `scss` ([SASS-implementation](4)) using `ng set defaults.styleExt scss`
 
 ## Fixes
 - Multiple modules while generating new component: `ng g c my-component --module app`
@@ -108,3 +110,4 @@ npm start
 [1]: https://universal.angular.io/
 [2]: https://material.angular.io/
 [3]: https://github.com/angular/angularfire2
+[4]: https://scotch.io/tutorials/using-sass-with-the-angular-cli
