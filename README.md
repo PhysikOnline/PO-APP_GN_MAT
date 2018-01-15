@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrate Angular Universal
 - [Documentation](1)
-- Generating the app `ng new my-app --routing`
+- Generating the app `ng new my-app --routing --style=scss`
 - Go into project `cd my-app`
 - Setup angular universal `ng generate universal ngu-app-shell`
 - Install new dependencies `npm install`
@@ -19,6 +19,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Advanced gesture support `npm install --save hammerjs`
     - Add `import 'hammer.js';` to e.g. `src/main.ts`
 - Icons `npm install material-design-icons`
+
+### Stylings
+If parameter `--style=scss` wasn't set at beginning, you can convert your project from `css` to `scss` using `ng set defaults.styleExt scss`
 
 ## Fixes
 - Multiple modules while generating new component: `ng g c my-component --module app`
