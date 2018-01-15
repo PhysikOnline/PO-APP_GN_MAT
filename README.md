@@ -16,13 +16,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Documentation](2)
 - Install module `npm install --save @angular/material @angular/cdk`
 - Advanced animations `npm install --save @angular/animations`
-- Gesture support `npm install --save hammerjs`
+- Advanced gesture support `npm install --save hammerjs`
     - Add `import 'hammer.js';` to e.g. `src/main.ts`
 - Icons `npm install material-design-icons`
-
-## Angular-Fire
-- [Dokumentation](3)
-- Install module `npm install firebase angularfire2 --save`
 
 ## Fixes
 - Multiple modules while generating new component: `ng g c my-component --module app`
@@ -31,6 +27,80 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Regardless which IDE you are using, try to test your app from time to time.
 Checking your syntax properly using `ng lint`.
 
+# PO-API Setup
+The serverside part is included under `./server`
+
+## Installing Modules:
+```Processing
+npm install express http-server nodemon --save
+npm install ts-node @types/node @types/express --save-dev
+```
+Generate SSH-Key and add public key to `cert.pem` and private one to `key.pem`
+Generate a `proxy.json` to proxy all requests to the server with:
+```javascript
+{
+  "/api": {
+    "target": "https://localhost:8081",
+    "secure": false
+  }
+}
+```
+Add a 'server'-directory and a server.ts-file:
+```javascript
+import * as express from 'express';
+import { Application } from 'express';
+import * as fs from 'fs';
+import * as https from 'https';
+import { readAllLessons } from './read-all-lessons-route';
+
+const bodyParser = require('body-parser');
+
+const app: Application = express();
+
+app.use(bodyParser.json());
+
+const commandLineArgs = require('command-line-args');
+
+const optionDefinitions = [
+  { name: 'secure', type: Boolean, defaultOption: true }
+];
+
+const options = commandLineArgs(optionDefinitions);
+
+// REST API
+app.route('/api/lessons').get(readAllLessons);
+
+if (options.secure) {
+  const httpsServer = https.createServer(
+    {
+      key: fs.readFileSync('key.pem'),
+      cert: fs.readFileSync('cert.pem')
+    },
+    app
+  );
+
+  // launch an HTTPS Server. Note: this does NOT mean that the application is secure
+  httpsServer.listen(8081, () =>
+    console.log(
+      'HTTPS Secure Server running at https://localhost:' +
+        httpsServer.address().port
+    )
+  );
+} else {
+  // launch an HTTP Server
+  const httpServer = app.listen(8081, () => {
+    console.log(
+      'HTTP Server running at https://localhost:' + httpServer.address().port
+    );
+  });
+}
+``` 
+
+## Launching the server
+```
+npm run start-server
+npm start
+```
 
 [1]: https://universal.angular.io/
 [2]: https://material.angular.io/
