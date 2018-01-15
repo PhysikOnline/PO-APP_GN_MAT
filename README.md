@@ -1,27 +1,37 @@
-# PoApp
+# PO-App Setup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
-## Development server
+## Integrate Angular Universal
+- [Documentation](1)
+- Generating the app `ng new my-app --routing`
+- Go into project `cd my-app`
+- Setup angular universal `ng generate universal ngu-app-shell`
+- Install new dependencies `npm install`
+- Adding the app-shell ` ng generate app-shell my-loading-shell --universal-app=ngu-app-shell --route=app-shell-path`
+- Build the production result `ng build --prod`
+- Run the production result `ng serve --prod` or `cd dist && http-server -c-1` (minus one)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Integrate Angular Material
+- [Documentation](2)
+- Install module `npm install --save @angular/material @angular/cdk`
+- Advanced animations `npm install --save @angular/animations`
+- Gesture support `npm install --save hammerjs`
+    - Add `import 'hammer.js';` to e.g. `src/main.ts`
+- Icons `npm install material-design-icons`
 
-## Code scaffolding
+## Angular-Fire
+- [Dokumentation](3)
+- Install module `npm install firebase angularfire2 --save`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Fixes
+- Multiple modules while generating new component: `ng g c my-component --module app`
 
-## Build
+# Developing the App
+Regardless which IDE you are using, try to test your app from time to time.
+Checking your syntax properly using `ng lint`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[1]: https://universal.angular.io/
+[2]: https://material.angular.io/
+[3]: https://github.com/angular/angularfire2
