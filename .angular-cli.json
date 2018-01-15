@@ -5,6 +5,10 @@
   },
   "apps": [
     {
+      "appShell": {
+        "app": "ngu-app-shell",
+        "route": "app-shell-path"
+      },
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -19,26 +23,24 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      },
-      "appShell": {
-        "app": "ngu-app-shell",
-        "route": "app-shell-path"
       }
     },
     {
+      "name": "ngu-app-shell",
       "root": "src",
       "outDir": "dist-server",
       "assets": [
         "assets",
         "favicon.ico"
       ],
+      "platform": "server",
       "index": "index.html",
       "main": "main.server.ts",
       "test": "test.ts",
@@ -46,16 +48,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      },
-      "platform": "server",
-      "name": "ngu-app-shell"
+      }
     }
   ],
   "e2e": {
@@ -83,7 +83,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
