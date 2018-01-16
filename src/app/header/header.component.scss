@@ -1,0 +1,23 @@
+mat-sidenav-container{
+  height: 100%;
+  width: 100%;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-icon{
+  line-height: 40px;
+}
+
+a:hover mat-icon{
+  cursor: pointer;
+}
+
+.main-container {
+overflow-y: auto;
+overflow-x: hidden;
+height: calc(100% - 64px);
+position: relative;
+}

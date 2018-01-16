@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="push" #sidenav>
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+
+  <mat-toolbar color="primary">
+    <a mat-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <div class="main-container">
+    <router-outlet class="main-content"></router-outlet>
+  </div>
+</mat-sidenav-container>

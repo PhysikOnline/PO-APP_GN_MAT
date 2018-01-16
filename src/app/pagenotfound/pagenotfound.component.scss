@@ -1,0 +1,49 @@
+#pagenotfound {
+  background-color: FFFFFF;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.pagenotfound0 {
+  background-color: #ffffff;
+  background: #ffffff url('../../assets/pagenotfound/sheldon.jpg') no-repeat
+    center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.pagenotfound1 {
+  background: rgb(63, 81, 181) url('../../assets/pagenotfound/Theo2.jpg')
+    no-repeat center;
+}
+
+.pagenotfound2 {
+  background: rgb(63, 81, 181) url('../../assets/pagenotfound/sheldon.jpg')
+    no-repeat center;
+}
+
+.pagenotfound3 {
+  height: 100%;
+  background: black url('../../assets/pagenotfound/gandalf.jpg') no-repeat
+    center;
+  background-size: 620px 350px;
+}
+
+.pagenotfound4 {
+  background: rgb(63, 81, 181) url('../../assets/pagenotfound/sheldon.gif')
+    no-repeat center;
+  height: 100%;
+  background-size: 400px 340px;
+}
+
+h1.header {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  top: 3%;
+  margin: 0;
+  padding: 5px 0;
+  color: #ffffff;
+}
