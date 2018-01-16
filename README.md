@@ -107,7 +107,11 @@ npm run start-server
 npm start
 ```
 
+## Using LDAP authentification
+[LDAP via Javascript](5)
+
 [1]: https://universal.angular.io/
 [2]: https://material.angular.io/
 [3]: https://github.com/angular/angularfire2
 [4]: https://scotch.io/tutorials/using-sass-with-the-angular-cli
+[5]: http://ldapjs.org/
